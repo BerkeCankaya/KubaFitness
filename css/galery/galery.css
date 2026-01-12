@@ -1,0 +1,184 @@
+.gallery-hero {
+    width: 100%;
+    min-height: 250px;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-hero:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
+    filter: blur(50px);
+    z-index: 1;
+}
+.gallery-hero img {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    object-fit: cover;
+    will-change: transform;
+}
+.gallery{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+    padding-bottom: 200px;
+    position: relative;
+}
+.gallery-menu{
+    width: 23%;
+    height: 350px;
+    background-color: #11172b15;
+    box-shadow: 0 2px 12px #576ac734;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    position: sticky;
+    top: 100px; /* 🔥 SABİT KALSIN */
+    flex-shrink: 0;
+}
+.gallery-menu li:hover span {
+  transform: translateX(5px);
+  transition: 0.3s;
+}
+.gallery-menu li:hover{
+    background-color: #432585;
+}
+.gallery-menu  li.active{
+    background-color: #432585;
+}
+.gallery-menu li {
+    color: var(--text-color);
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 20px;
+    border-radius: 8px;
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+.gallery-menu li:after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10%;
+    background-color: var(--primary-color);
+    filter: blur(20px);
+    z-index: -1;
+}
+.gallery-images{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 🔥 her satırda 2 resim */
+    row-gap: 50px;
+    column-gap: 25px;
+}
+.gallery-images img{
+    display: flex;
+    flex: 1;
+    width:100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-img {
+    width: 80%;
+    height: 90vh;
+    object-fit: cover;
+    border-radius: 8px;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    z-index: 10000;
+    transition: transform 0.3s ease;
+}
+
+.lightbox-close:hover {
+    transform: rotate(90deg);
+}
+/* Ok butonları */
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--background-color);
+    border: none;
+    color: white;
+    font-size: 40px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    backdrop-filter: blur(10px);
+    z-index: 10000;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background-color: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
