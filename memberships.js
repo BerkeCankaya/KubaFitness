@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const heroImg = document.querySelector(".about-hero img");
-    const heroTitle = document.querySelector(".about-content h1");
-    const heroText = document.querySelector(".about-content p");
+    const heroTitle = document.querySelector(".other-content h1");
+    const heroText = document.querySelector(".other-content p");
 
     if (heroImg && heroTitle && heroText) {
         window.addEventListener("scroll", () => {

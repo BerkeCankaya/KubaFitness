@@ -255,11 +255,11 @@
     height:30px;
     background-color: var(--primary-color);
     filter: blur(20px);
-    opacity: 0.5;
+    opacity: 0.3;
     z-index: -1;
 }
 .faq-answer p{
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.6;
     color: var(--text-color);
     font-family: var(--text-font);
