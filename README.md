@@ -1,6 +1,6 @@
 🏋️‍♂️ Local Fitness Club Website
 
-Modern ve responsive bir yerel fitness salonu için tasarlanmış tanıtım websitesi.
+Modern ve responsive bir yerel fitness salonu için tasarlanmış kurumsal websitesi.
 Site; salonun hizmetlerini, eğitmenlerini, galerisini ve iletişim bilgilerini kullanıcı dostu bir arayüzle sunar.
 
 🔗 Live Demo
