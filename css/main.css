@@ -363,6 +363,7 @@ footer{
 .about-hero {
     width: 100%;
     min-height: 250px;
+        height: 30vh;
     position: relative;
     overflow: hidden;
 }
@@ -380,10 +381,12 @@ footer{
 }
 .about-hero img {
     position: absolute;
-    top: -20%;
+    top:-30%;
     left: 0;
     width: 100%;
     height: 180%;
+    object-fit: cover;
+    object-position: center 40%;
     will-change: transform;
 }
 .other-content{
