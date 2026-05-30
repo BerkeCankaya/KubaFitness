@@ -43,7 +43,8 @@ const slides = [
 
 let currentIndex = 0;
 let autoSlideInterval;
-const SLIDE_DURATION = 6000; 
+const SLIDE_DURATION = 4500; 
+
 
 const titleEl = document.getElementById("slide-title");
 const textEl = document.getElementById("slide-text");
@@ -55,7 +56,7 @@ function updateSlide() {
   gsap.to([titleEl, textEl, detailsEl, imageEl], {
     opacity: 0,
     y: 20,
-    duration: 0.3,
+    duration: 0.2,
     onComplete: () => {
       titleEl.textContent = currentSlide.title;
       textEl.textContent = currentSlide.text;
@@ -71,22 +72,24 @@ function updateSlide() {
     const tl = gsap.timeline();
 
     tl.fromTo(
-    titleEl,
-        { y: 20, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.4 }
+      titleEl,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, duration: 0.2 }
     )
+
     .fromTo(
     textEl,
         { y: 16, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.45 },
-        "+=0.05" 
+        { y: 0, opacity: 1, duration: 0.22 },
+        "+=0.03" 
     )
     .fromTo(
     detailsEl,
         { y: 10, opacity: 0 },
-        { y: 0, opacity: 1, duration: 0.35, stagger: 0.08 },
-        "+=0.05"
+        { y: 0, opacity: 1, duration: 0.15, stagger: 0.06 },
+        "+=0.03"
     );
+
     gsap.fromTo(imageEl,
         { x: 40, scale: 1.05, opacity: 0 },
         { x: 0, scale: 1, opacity: 1, duration: 0.7, ease: "power2.out" }
